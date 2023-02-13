@@ -7,6 +7,8 @@ const playButtonImg = document.createElement("img");
 main.appendChild(playButtonImg);
 
 // Backstory Props
+let file;
+let data;
 const textField = document.createElement("div");
 main.appendChild(textField);
 const speaker = document.createElement("p");
@@ -20,7 +22,13 @@ let orders = [];
 let customers = [];
 
 // Main Menu Handling
-const mainMenu = () => {
+const mainMenu = async () => {
+  try {
+    file = await fetch("./res/data/dialogue.json");
+    data = await file.json();
+  } catch (err) {
+    console.log(err);
+  }
   mainMenuImg.src = "./res/img/logo.png";
   mainMenuImg.style.position = "absolute";
   mainMenuImg.style.width = "326px";
@@ -48,21 +56,29 @@ playButtonImg.onclick = () => {
 
 // Backstory Handling
 const backstory = () => {
+  let progress = 0;
   textField.id = "dialogue";
   speaker.id = "speaker";
-  speaker.innerHTML = "Cheny";
+  speaker.innerHTML = data.dialogues[progress].speaker;
   hint.id = "hint";
   hint.innerText = "Click to continue";
-  textField.innerText = `Text`;
-  let progress = 0;
+  textField.innerText = data.dialogues[progress].text;
   window.addEventListener("click", () => {
-    /*if (progress == ) {
+    if (progress == data.dialogues.length) {
       window.removeEventListener("click");
+      bulkHide(textField, speaker, hint);
+      gameplay();
       return;
-    }*/
+    }
     progress++;
-    textField.innerText = "";//json
+    speaker.innerText = data.dialogues[progress].speaker;
+    textField.innerText = data.dialogues[progress].text;
   });
+};
+
+// Gameplay Handling
+const gameplay = () => {
+
 };
 
 const buttonBump = (element) => {
