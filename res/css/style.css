@@ -1,6 +1,12 @@
+/* gagam styl */
+
 @font-face {
-  font-family: DialogueFont;
-  src: url(../ttf/ComicRelief.ttf);
+  font-family: MainFont;
+  src: url(./ComicRelief.ttf);
+}
+@font-face {
+  font-family: Digital;
+  src: url(./DS-DIGI.TTF);
 }
 html,
 body {
@@ -13,35 +19,338 @@ body {
 #main {
   width: 100%;
   height: 100%;
-  font-family: DialogueFont;
-  font-size: 3vh;
+  font-family: MainFont;
+  font-size: 1.5vw;
   font-weight: bold;
 }
+#mainImg {
+  position: absolute;
+  width: 22vw;
+  height: 44vh;
+  left: 14vw;
+  top: 8vh;
+}
+#playImg {
+  position: absolute;
+  width: 24.5vw;
+  height: 16vh;
+  left: 12.8vw;
+  top: 66.5vh;
+  transition: 0.1s;
+  cursor: pointer;
+}
 #dialogue {
+  position: absolute;
   border: solid 1vh;
   border-radius: 4vh;
-  position: absolute;
   left: 25%;
-  top: 65%;
+  top: 75%;
   width: 50%;
-  height: 25%;
+  height: 15%;
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 2%;
+  background-color: rgb(255, 244, 231);
 }
 #hint,
 #speaker {
   position: absolute;
-  background-color: white;
+  background-color: bisque;
   border: solid 0.5vh;
   left: 60%;
   top: 88%;
-  padding-left: 0.5%;
-  padding-right: 0.5%;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
+  padding: 0.5% 0.5% 0.5% 0.5%;
 }
+/* Speaker Jíra */
 #speaker {
   left: 30%;
-  top: 59%;
+  top: 69%;
+}
+#prompt {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 30%;
+  font-size: 2.5vw;
+}
+#yesDiv,
+#noDiv {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  font-size: 3vw;
+}
+#noDiv {
+  top: 0;
+  left: 50%;
+}
+#button {
+  position: relative;
+  border: 1vh solid black;
+  border-radius: 5vh;
+  width: 20%;
+  text-align: center;
+  margin: auto;
+  top: 45%;
+  cursor: pointer;
+  transition: 0.1s;
+  background-color: bisque;
+}
+#day {
+  position: absolute;
+  border: black solid 1vh;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 3.5vw;
+  padding-top: 6vh;
+  width: 15vw;
+  height: 15vw;
+  top: 80vh;
+  left: 42.5vw;
+  box-sizing: border-box;
+}
+#bottomWrapper {
+  position: absolute;
+  width: 100%;
+  height: 14%;
+  top: 85.5%;
+  background-image: linear-gradient(
+    rgb(33, 33, 33),
+    rgb(45, 45, 45) 30%,
+    rgb(45, 45, 45) 70%,
+    rgb(33, 33, 33)
+  );
+  border-top: black solid 0.5vh;
+  z-index: 10;
+}
+#deskButton,
+#grillButton,
+#buildButton {
+  display: inline-block;
+  width: 20%;
+  height: 80%;
+  margin-top: 1.5vh;
+  margin-left: 10%;
+  font-size: 4vh;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(rgb(102, 205, 50), rgb(0, 156, 0));
+  transition: 0.1s;
+  border-radius: 25vh;
+  cursor: pointer;
+}
+#grillButton {
+  background-image: linear-gradient(rgb(255, 166, 0), rgb(150, 97, 0));
+}
+#buildButton {
+  background-image: linear-gradient(rgb(165, 198, 237), rgb(83, 140, 247));
+}
+#orderScreen,
+#grillScreen,
+#buildScreen {
+  position: absolute;
+  height: 86%;
+  width: 100%;
+}
+#orderScreen {
+  background-color: yellow;
+}
+#grillScreen {
+  background-image: radial-gradient(
+    closest-side at 50% 15%,
+    rgb(255, 166, 0),
+    rgb(150, 97, 0)
+  );
+}
+#buildScreen {
+  background-image: radial-gradient(
+    closest-side at 50% 37.5%,
+    rgb(165, 198, 237),
+    rgb(83, 140, 247)
+  );
+}
+#rail {
+  position: absolute;
+  width: 100%;
+  height: 1%;
+  top: 3%;
+  background-image: linear-gradient(
+    to right,
+    rgb(77, 77, 77),
+    darkgray 50%,
+    rgb(77, 77, 77) 85%
+  );
+  border-top: rgb(45, 45, 45) solid 0.5vh;
+  border-bottom: black solid 0.5vh;
+  z-index: 10;
+}
+#pin {
+  position: absolute;
+  width: 16vw;
+  height: 16vw;
+  left: 85vw;
+  top: -8vw;
+  background-image: radial-gradient(rgb(45, 45, 45) 50%, rgb(33, 33, 33));
+  border: black solid 0.5vh;
+  border-radius: 50%;
+  z-index: 11;
+}
+#innerPin {
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  top: 10.5vw;
+  left: 6.5vw;
+  background-image: radial-gradient(rgb(77, 77, 77), rgb(45, 45, 45));
+  border: black solid 0.5vh;
+  border-radius: 50%;
+}
+#order {
+  position: absolute;
+  width: 12%;
+  height: 50%;
+  z-index: 100;
+  transition: 0.1s;
+  background-image: linear-gradient(white, rgb(199, 199, 199));
+  border: black solid 0.5vh;
+  cursor: pointer;
+}
+#orderImg {
+  position: relative;
+  width: 40%;
+  left: 28%;
+  margin-top: -5%;
+}
+/* Order Station */
+#orderDesk,
+#buildDesk {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  top: 75%;
+  background-image: radial-gradient(rgb(102, 205, 50), rgb(0, 156, 0));
+}
+#moneyDisplay {
+  position: absolute;
+  color: rgb(0, 178, 0);
+  font-family: Digital;
+  font-size: 3vw;
+  padding: 1vh 2vh 1vh 3vh;
+  top: 10%;
+  background-color: rgb(92, 92, 92);
+  border-top: rgb(45, 45, 45) solid 1vh;
+  border-right: rgb(45, 45, 45) solid 1vh;
+  border-bottom: rgb(45, 45, 45) solid 1vh;
+}
+#orderOffer {
+  position: absolute;
+  background-color: white;
+  text-align: center;
+  border: black solid 0.5vh;
+  border-radius: 3vh;
+  width: 10%;
+  height: max-content;
+  left: 30%;
+  top: 20%;
+  cursor: pointer;
+}
+/* Grill Station */
+#grillDesk {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top: 30%;
+  background-image: radial-gradient(gray, rgb(77, 77, 77));
+}
+#grill {
+  position: absolute;
+  width: 50%;
+  height: 90%;
+  top: 4%;
+  left: 25%;
+  border: rgb(77, 77, 77) solid 0.5vh;
+  border-radius: 3vh;
+  background-image: radial-gradient(rgb(205, 203, 169), darkgray);
+}
+#meatSource,
+#meatTrash,
+#meatDeposit {
+  position: absolute;
+  width: 11%;
+  height: 20%;
+  top: 65%;
+  left: 6.5%;
+  border-radius: 50%;
+  background-image: linear-gradient(gray, black);
+  border: rgb(77, 77, 77) solid 0.5vh;
+}
+#meatTrash {
+  top: 10%;
+}
+#trashSymbol {
+  position: relative;
+  left: 30%;
+  top: 10%;
+  width: 40%;
+}
+#meatDeposit {
+  left: 81.5%;
+}
+#pattySource {
+  position: absolute;
+  width: 11%;
+  top: 75%;
+  left: 6.5%;
+  cursor: pointer;
+  transition: 0.1s;
+}
+#pattyGrilling {
+  position: absolute;
+  width: 11%;
+  cursor: pointer;
+  transition: 0.1s;
+}
+/* Build Station */
+#buildDesk {
+  background-image: radial-gradient(gray, rgb(77, 77, 77));
+}
+#buildSource {
+  position: absolute;
+  width: 11%;
+  height: 55%;
+  top: 25%;
+  left: 20%;
+  border-radius: 50%;
+  background-image: linear-gradient(gray, black);
+  border: rgb(77, 77, 77) solid 0.5vh;
+}
+#sourceWrapper {
+  position: absolute;
+  width: 16%;
+  height: 100%;
+  left: 2%;
+  z-index: 10;
+}
+#shelf {
+  position: relative;
+  width: 160%;
+  height: 10%;
+  top: 8%;
+  left: -100%;
+  margin-top: 2%;
+  background-image: linear-gradient(rgb(45, 45, 45) 20%, rgb(77, 77, 77) 60%);
+  border-top: black solid 0.5vh;
+  border-right: black solid 0.5vh;
+  border-bottom: gray solid 1vh;
+  transform: skewX(45deg);
+  border-radius: 3vh;
+}
+#plate {
+  position: absolute;
+  background-image: linear-gradient(rgb(233, 60, 60), rgb(186, 28, 28));
+  border: rgb(118, 0, 0) solid 1vh;
+  height: 76%;
+  width: 20%;
+  top: 7%;
+  left: 39.5%;
 }

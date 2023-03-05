@@ -1,0 +1,40 @@
+{
+  "ingredients": [
+    {
+      "src": "./res/img/heel.png"
+    },
+    {
+      "src": "./res/img/patty.png"
+    },
+    {
+      "src": "./res/img/cheese.png"
+    },
+    {
+      "src": "./res/img/pickle.png"
+    },
+    {
+      "src": "./res/img/onion.png"
+    },
+    {
+      "src": "./res/img/lettuce.png"
+    },
+    {
+      "src": "./res/img/tomato.png"
+    },
+    {
+      "src": "./res/img/ketchupSplash.png"
+    },
+    {
+      "src": "./res/img/mustardSplash.png"
+    },
+    {
+      "src": "./res/img/mayoSplash.png"
+    },
+    {
+      "src": "./res/img/bbqSplash.png"
+    },
+    {
+      "src": "./res/img/crown.png"
+    }
+  ]
+}

@@ -1,32 +1,32 @@
 {
-    "dialogues": [
-        {
-            "speaker": "Cheny",
-            "text": "Ach ano, další dobře odvedený den v práci..."
-        },
-        {
-            "speaker": "Cheny",
-            "text": "Zcela jistě nikdo nepřijde na mou tajnou ingedienci."
-        },
-        {
-            "speaker": "Strážník",
-            "text": "Dobrý den! Vy jste Ouyi Chen?"
-        },
-        {
-            "speaker": "Cheny",
-            "text": "Ano jsem Ouyi Chen, ale můžete mi říkat Cheny. (Gus Fring reference)"
-        },
-        {
-            "speaker": "Strážník",
-            "text": "Právě vás zatýkáme za použití psího masa v burgerech."
-        },
-        {
-            "speaker": "Cheny",
-            "text": "Hráči!!! Musíš zachránit moji restauraci před bankrotem."
-        },
-        {
-            "speaker": "Cheny",
-            "text": "Osud Cheny Burgeru je teď na tobě."
-        }
-    ]
+  "dialogues": [
+    {
+      "speaker": "Cheny",
+      "text": "Ach ano, další dobře odvedený den v práci..."
+    },
+    {
+      "speaker": "Cheny",
+      "text": "Zcela jistě nikdo nepřijde na mou tajnou ingredienci."
+    },
+    {
+      "speaker": "Hráč",
+      "text": "Dobrý den! Vy jste pan Chen?"
+    },
+    {
+      "speaker": "Cheny",
+      "text": "Ano jsem Ouyi Chen, ale můžete mi říkat Cheny. (Gus Fring reference)"
+    },
+    {
+      "speaker": "Hráč",
+      "text": "Proč chutnají vaše burgery jako psí maso?"
+    },
+    {
+      "speaker": "Cheny",
+      "text": "Ach sakra! (cheny posrar💀)"
+    },
+    {
+      "speaker": "Cheny",
+      "text": "Když o tom mase nikomu neřeknete můžete si nechat celou restauraci."
+    }
+  ]
 }
