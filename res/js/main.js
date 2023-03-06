@@ -363,10 +363,6 @@ class Order {
         if (this.isOffscreen()) {
           this.orderInstance.style.left = "10%";
         }
-        if (this.isAbovePlate && burger.finished) {
-          this.remove();
-          burger.present();
-        }
         if (!this.isNearPin()) {
           if (this.occupiingPin) {
             pinOccupied = false;
@@ -830,6 +826,20 @@ class Ingredient {
               this.ingredientInstance.remove();
               new Ingredient(this.type);
               burger.finish();
+              let presentedBurger = burger.burgerInstance.cloneNode(true);
+              buildScreen.removeChild(orderHolder);
+              buildScreen.removeChild(burger.burgerInstance);
+              hide(grillScreen, buildScreen);
+              orderScreen.style.display = "block";
+              orderScreen.appendChild(presentedBurger);
+              setTimeout(() => {
+                orderOffer.style.display = "block";
+                orderOffer.innerText = "A to je všechno!";
+                orderScreen.removeChild(presentedBurger);
+                moneyMade += 2;
+                moneyDisplay.innerText = `${moneyMade.toFixed(2)} $`;
+              }, 3000);
+              this.remove();
               return;
             }
             burger.addIngredient(this.type);
@@ -1029,20 +1039,6 @@ class Burger {
     orderHolder.style.top = "80%";
     orderHolder.style.backgroundColor = "darkgray";
     buildScreen.appendChild(orderHolder);
-  }
-  present() {
-    let presentedBurger = this.burgerInstance.cloneNode(true);
-    buildScreen.removeChild(orderHolder);
-    buildScreen.removeChild(this.burgerInstance);
-    hide(grillScreen, buildScreen);
-    orderScreen.style.display = "block";
-    orderScreen.appendChild(presentedBurger);
-    setTimeout(() => {
-      orderScreen.removeChild(presentedBurger);
-      moneyMade += 2;
-      moneyDisplay.innerText = `${moneyMade.toFixed(2)} $`;
-      orderOffer.style.display = "block";
-    }, 3000);
   }
   remove() {
     buildScreen.removeChild(this.ingredientInstance);
